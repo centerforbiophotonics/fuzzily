@@ -22,4 +22,8 @@ describe Fuzzily::String do
     # The final ess, sse, se* would be dupes.
     result('Besse-en-Chandesse').should == %w(**b *be bes ess sse se* e*e *en en* n*c *ch cha han and nde des)
   end
+
+  it 'retain numbers' do
+    result('678 street').should == %w(**6 *67 678 78* 8*s *st str tre ree eet et*)
+  end
 end
